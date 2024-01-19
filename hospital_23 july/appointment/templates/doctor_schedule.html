@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1>{{ name }}</h1>
+<!--<p>The queryset object:</p>-->
+<!--{{ appointmentdata }}-->
+<div class="container">
+    <table class="table">
+  <thead class="thread-dark">
+    <tr>
+<!--      <th scope="col">Id</th>-->
+      <th scope="col">Date</th>
+      <th scope="col">Slot</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for x in appointmentdata %}
+    <tr>
+<!--      <th scope="row">{{ x.id }}</th>-->
+      <td>{{ x.date }}</td>
+      <td>{{ x.slot }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock content %}
